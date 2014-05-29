@@ -1,21 +1,21 @@
-Crashlog created at 2014-05-29 16:49:00 -0400
+Crashlog created at 2014-05-29 17:34:46 -0400
 
 ===== MESSAGE:
 
-NameError: uninitialized constant Section::RunimeError
+RuntimeError: lean_startup: invalid reference in section "lectures"
 
 ===== COMPILATION STACK:
 
-  - [item]   /content/topics/rails/rails_db_mechanics/ (rep default)
+  - [item]   /content/lectures/welcome/welcome/ (rep default)
 
 ===== STACK TRACE:
 
-  0. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/coursegen-0.0.2/lib/coursegen/course/lib/section.rb:23:in `find_by_short_name'
+  0. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/coursegen-0.0.2/lib/coursegen/course/lib/section.rb:22:in `find_by_short_name'
   1. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/coursegen-0.0.2/lib/coursegen/course/lib/toc.rb:51:in `lookup_citem'
   2. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/coursegen-0.0.2/lib/coursegen/course/helpers/content_helpers.rb:13:in `lookup_nitem'
   3. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/coursegen-0.0.2/lib/coursegen/course/helpers/navigation_helpers.rb:37:in `link_to_section'
-  4. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/coursegen-0.0.2/lib/coursegen/course/helpers/navigation_helpers.rb:8:in `link_to_topic'
-  5. item /content/topics/rails/rails_db_mechanics/ (rep default):23:in `get_binding'
+  4. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/coursegen-0.0.2/lib/coursegen/course/helpers/navigation_helpers.rb:4:in `link_to_lecture'
+  5. item /content/lectures/welcome/welcome/ (rep default):47:in `get_binding'
   6. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/2.1.0/erb.rb:850:in `eval'
   7. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/2.1.0/erb.rb:850:in `result'
   8. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/filters/erb.rb:34:in `run'
@@ -223,7 +223,7 @@ HOME => "/Users/pitosalas"
 ITERM_PROFILE => "New Profile"
 ITERM_SESSION_ID => "w0t1p0"
 LANG => "en_US.UTF-8"
-LINES => "17"
+LINES => "23"
 LOGNAME => "pitosalas"
 OLDPWD => "/usr/local/Cellar/rbenv-gem-rehash/1.0.0"
 PATH => "/Users/pitosalas/.rbenv/versions/2.1.1/bin:/usr/local/Cellar/rbenv/0.4.0/libexec:/usr/local/heroku/bin:/Users/pitosalas/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin"
