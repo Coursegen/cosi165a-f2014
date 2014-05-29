@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>Model View Controller - review - Cosi 000</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bootstrap/css/custom.css">
+    
+<!--     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+ -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <script src="/tipuesearch/js/tipuesearch_content.js"></script>
+  <!-- <link href="/tipuesearch/css/tipuesearch.css" rel="stylesheet"> -->
+    <script src="/tipuesearch/js/tipuesearch_set.js"></script>
+    <script src="/tipuesearch/js/tipuesearch.js"></script>
+
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc 3.6.11">
+  </head>
+  <body>
+
+    
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+  <div class="row">
+    <div class="col-xs-7">
+      <a class="navbar-brand" href="/">Cosi 000 - Not a course</a>
+    </div>
+    <div class="col-xs-2">
+      <div class="btn-group">
+        
+          <a class="btn btn-mini" href="/content/topics/arch/models/"><i class="glyphicon glyphicon-chevron-left" rel="tooltip" title="previous page"></i></a> <a class="btn btn-mini" href="/content/topics/arch/nosql_mongodb/"><i class="glyphicon glyphicon-chevron-right" rel="tooltip" title="next page"></i></a>
+        
+      </div>
+    </div>
+    <div class="col-xs-3">
+      <form role="form" class="form-inline" action="/search_index/search/index.html">
+        <div class="input-group input-group-sm">
+          <input type="text" name="q" id="tipue_search_input" placeholder="search..."class="form-control">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+        <h3>
+	Model View Controller - review
+	
+</h4>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-9">
+          <h4 id="mvc-review">MVC Review</h4>
+
+<h5 id="httpwwwbrandeiseduindexhtml">http://www.brandeis.edu/index.html</h5>
+
+<div class="row">
+  <div class="col-md-offset-2 col-md-8">
+    <img src="/content/images/mvc_detailed.png" class="img-responsive img-thumbnail" />
+  </div>
+</div>
+
+<h4 id="review-of-mvc">Review of MVC</h4>
+
+<ul>
+  <li>Reminder: 
+    <ul>
+      <li>Basic Client &lt;-&gt; Server structure</li>
+      <li>MVC is a general pattern</li>
+      <li>Here we are applying it to a web (http) <strong>server</strong></li>
+    </ul>
+  </li>
+  <li>The Models: contains the application ‘state’
+    <ul>
+      <li>Think of it as what you want preserved if your app (i.e. the server in our case) has to be restarted</li>
+      <li>Think of your user’s reasonable expectations</li>
+      <li>Discussion</li>
+    </ul>
+  </li>
+  <li>The Controllers: master control switch
+    <ul>
+      <li>Sees requests from the outside world</li>
+      <li>Asks the models for data, sometimes updates the data</li>
+      <li>Asks the views for new pages or results</li>
+      <li>Responds to the request</li>
+      <li>(Note: this parallels the HTTP protocol exactly!)</li>
+    </ul>
+  </li>
+  <li>The Views
+    <ul>
+      <li>Use data (given by the controller)</li>
+      <li>To create and assemble responses to be sent</li>
+      <li>Responses are html, but may be other formats too</li>
+    </ul>
+  </li>
+</ul>
+
+        </div>
+        <div class="col-xs-3 well right-nav">
+          <ul>
+            
+              <li>
+            <label class="tree-toggler level1">
+              <span class="glyphicon glyphicon-plus-sign glyphicon-small "></span>
+              Background
+            </label><ul class="tree" style="display: none"><li class=""><a href="/">Welcome!</a></li></ul></li>
+            
+              
+            
+          </div>
+        </div>
+      </div>
+      <div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <footer>Copyright (2013-2014) R. Pito Salas, pitosalas@gmail.com</footer>
+      </div>
+  </div>
+</div>
+
+
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="/bootstrap/js/custom.js"></script>
+    <script> $(document).ready(function() {
+     $('#tipue_search_input').tipuesearch();
+    });</script>
+
+  </body>
+</html>

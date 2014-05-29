@@ -1,0 +1,210 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>Hands-on with Rails DBs and Models - Cosi 000</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bootstrap/css/custom.css">
+    
+<!--     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+ -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <script src="/tipuesearch/js/tipuesearch_content.js"></script>
+  <!-- <link href="/tipuesearch/css/tipuesearch.css" rel="stylesheet"> -->
+    <script src="/tipuesearch/js/tipuesearch_set.js"></script>
+    <script src="/tipuesearch/js/tipuesearch.js"></script>
+
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc 3.6.11">
+  </head>
+  <body>
+
+    
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+  <div class="row">
+    <div class="col-xs-7">
+      <a class="navbar-brand" href="/">Cosi 000 - Not a course</a>
+    </div>
+    <div class="col-xs-2">
+      <div class="btn-group">
+        
+          <a class="btn btn-mini" href="/content/topics/rails/rails_db_mechanics/"><i class="glyphicon glyphicon-chevron-left" rel="tooltip" title="previous page"></i></a> <a class="btn btn-mini" href="/content/topics/rails/rails_resources/"><i class="glyphicon glyphicon-chevron-right" rel="tooltip" title="next page"></i></a>
+        
+      </div>
+    </div>
+    <div class="col-xs-3">
+      <form role="form" class="form-inline" action="/search_index/search/index.html">
+        <div class="input-group input-group-sm">
+          <input type="text" name="q" id="tipue_search_input" placeholder="search..."class="form-control">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+        <h3>
+	Hands-on with Rails DBs and Models
+	
+</h4>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-9">
+          <h6 id="database-schema-for-an-event-schedule">Database schema for an event schedule</h6>
+
+<pre><code>Person(name, dob, gender, zipcode)
+Event(name, date)
+Registrations(person_id, event_id, status, comment)
+</code></pre>
+
+<h6 id="create-the-database-tables">Create the database tables</h6>
+
+<pre><code>rails generate resource Person name:string dob:date gender:string zipcode:string
+rails generate resource Event name:string event_date:date event_time:time
+rails generate model Registration person_id:integer event_id:integer
+</code></pre>
+
+<h6 id="define-sample-data-in-seedsrb">Define sample data in seeds.rb</h6>
+
+<pre><code>Event.create(name: 'Welcome', event_date: 'Feb 1 2014', event_time: '12:00pm')
+Person.create(name: 'Angelo Smith', dob: 'Jan 2, 1991', gender: 'f', zipcode: 02474)
+Registration.create(person_id: 3, event_id: 2)
+</code></pre>
+
+<h6 id="commands-relating-to-seeding">Commands relating to seeding</h6>
+
+<pre><code>rake db:create  # creates the database for the current env
+rake db:seed    # (only) runs the db/seed.rb file
+rake db:setup   # runs db:schema:load, db:seed
+</code></pre>
+
+<h6 id="examining-the-db-from-the-sql-console">Examining the DB from the SQL console</h6>
+<p><em>In the database console you can type classic SQL commands</em></p>
+
+<pre><code>rails dbconsole
+.help
+.databases
+select * from people
+select * from people where id &gt; 1
+</code></pre>
+
+<h6 id="examining-the-databases-from-the-rails-console">Examining the databases from the Rails console</h6>
+<p><em>In the rails console you can type ruby commands (it’s pry)</em></p>
+
+<pre><code>ActiveRecord::Base.connection.tables
+Person.all
+Person.where(gender: 'm')
+Person.where("dob &gt; ?", Date.new(1995))
+Person.where("dob &gt; ?", Date.new(1995)).count
+</code></pre>
+
+<h6 id="crud-operations-create-read-update-delete">CRUD operations (Create, Read, Update, Delete)</h6>
+
+<pre><code>p = Person.new(name: "Pito", dob: '12-12-2012', gender: 'f', zipcode: 12355)
+p.new_record?
+p.save
+p = Person.create(name: "Amin", dob: '12-12-2014', gender: 'm', zipcode: 31231)
+p.delete
+</code></pre>
+
+<h6 id="associations-declared-in-models">Associations, declared in models</h6>
+
+<pre><code>class Person &lt; ActiveRecord::Base
+  has_many :registrations
+  has_many :events, through: :registrations
+end
+class Event &lt; ActiveRecord::Base
+  has_many :registrations
+  has_many :people, through: :registrations
+end
+class Registration &lt; ActiveRecord::Base
+  belongs_to :person
+  belongs_to :event
+end
+</code></pre>
+
+<h6 id="association-used">Association, used</h6>
+
+<pre><code>Person.find(1).registrations
+Person.where(name: "Angelo Smith").first.registrations
+Event.find(1).people
+</code></pre>
+
+<h6 id="validations">Validations</h6>
+<p><em>Validations are applied by ActiveRecord, NOT the database</em></p>
+
+<pre><code>validates :zipcode, length: { is: 5}    # declared in model file
+p = Person.find(1)
+p.zipcode = 1                           # assign invalid value
+p.valid?                                # explicit check
+p.save                                  # Is not permitted into the database
+p.save!                                 # Same but throws exception
+</code></pre>
+
+<h4 id="appendices">Appendices</h4>
+
+<h5 id="references">References</h5>
+<ul>
+  <li><a href="https://github.com/michaeldv/awesome_print">Awesome Print</a></li>
+  <li><a href="http://guides.rubyonrails.org/association_basics.html#the-has-many-through-association">ActiveRecord Associations</a></li>
+  <li><a href="http://guides.rubyonrails.org/active_record_querying.html">ActiveRecord Queries</a></li>
+  <li><a href="http://cosi236b.courses.salas.com.s3-website-us-west-2.amazonaws.com/content/cribsheets/05_activerecord_queries/">ActiveRecord Queries Cribsheet</a></li>
+  <li><a href="http://edgeguides.rubyonrails.org/active_record_validations.html#validation-helpers">ActiveRecord Validations</a></li>
+  <li><a href="http://cosi236b.courses.salas.com.s3-website-us-west-2.amazonaws.com/content/cribsheets/03_rails_validations/">Validations Cribsheet</a></li>
+</ul>
+
+<h5 id="gemfile">Gemfile</h5>
+
+<pre><code>gem 'pry-rails'
+gem 'pry'
+gem 'pry-debugger'
+gem 'pry-stack_explorer'
+gem 'awesome_print'
+gem 'hirb'
+</code></pre>
+
+        </div>
+        <div class="col-xs-3 well right-nav">
+          <ul>
+            
+              <li>
+            <label class="tree-toggler level1">
+              <span class="glyphicon glyphicon-plus-sign glyphicon-small "></span>
+              Background
+            </label><ul class="tree" style="display: none"><li class=""><a href="/">Welcome!</a></li></ul></li>
+            
+              
+            
+          </div>
+        </div>
+      </div>
+      <div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <footer>Copyright (2013-2014) R. Pito Salas, pitosalas@gmail.com</footer>
+      </div>
+  </div>
+</div>
+
+
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="/bootstrap/js/custom.js"></script>
+    <script> $(document).ready(function() {
+     $('#tipue_search_input').tipuesearch();
+    });</script>
+
+  </body>
+</html>

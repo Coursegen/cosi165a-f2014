@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>Rails Activerecord Queries - Cosi 000</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bootstrap/css/custom.css">
+    
+<!--     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+ -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <script src="/tipuesearch/js/tipuesearch_content.js"></script>
+  <!-- <link href="/tipuesearch/css/tipuesearch.css" rel="stylesheet"> -->
+    <script src="/tipuesearch/js/tipuesearch_set.js"></script>
+    <script src="/tipuesearch/js/tipuesearch.js"></script>
+
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc 3.6.11">
+  </head>
+  <body>
+
+    
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+  <div class="row">
+    <div class="col-xs-7">
+      <a class="navbar-brand" href="/">Cosi 000 - Not a course</a>
+    </div>
+    <div class="col-xs-2">
+      <div class="btn-group">
+        
+          <a class="btn btn-mini" href="/content/topics/business/value_proposition_etc/"><i class="glyphicon glyphicon-chevron-left" rel="tooltip" title="previous page"></i></a> <a class="btn btn-mini" href="/content/topics/cribsheets/code_climate/"><i class="glyphicon glyphicon-chevron-right" rel="tooltip" title="next page"></i></a>
+        
+      </div>
+    </div>
+    <div class="col-xs-3">
+      <form role="form" class="form-inline" action="/search_index/search/index.html">
+        <div class="input-group input-group-sm">
+          <input type="text" name="q" id="tipue_search_input" placeholder="search..."class="form-control">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+        <h3>
+	Rails Activerecord Queries
+	
+</h4>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-9">
+          
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#777"># Simple queries return collections of instances</span>
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>   <span style="color:#036;font-weight:bold">Article</span>.find(<span style="color:#00D">3</span>) <span style="color:#777"># id=3</span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>   <span style="color:#036;font-weight:bold">Article</span>.w­her­e(<span style="color:#606">a­uthor</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">admin</span><span style="color:#710">'</span></span>)
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>   <span style="color:#036;font-weight:bold">Article</span>.where(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">likes_count = ?</span><span style="color:#710">&quot;</span></span>, value_for_count)
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>   <span style="color:#036;font-weight:bold">Article</span>.f­ind­_by­(<span style="color:#606">title</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Rails 4</span><span style="color:#710">'</span></span>, <span style="color:#606">author</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">admin</span><span style="color:#710">'</span></span>)
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>   <span style="color:#036;font-weight:bold">Article</span>.find_or_create_by(<span style="color:#606">title</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Beatles</span><span style="color:#710">'</span></span>)
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#777"># Working with collections</span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>   <span style="color:#036;font-weight:bold">Article</span>.where(<span style="color:#606">author</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">pito</span><span style="color:#710">'</span></span>).last <span style="color:#777"># choosing</span>
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>   <span style="color:#036;font-weight:bold">Article</span>.where(<span style="color:#606">author</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">pito</span><span style="color:#710">'</span></span>).order(<span style="color:#606">created_at</span>: <span style="color:#A60">:desc</span>) <span style="color:#777"># sorting</span>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="color:#777"># Working with associated Models</span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>article = <span style="color:#036;font-weight:bold">Article</span>.comments.where(<span style="color:#606">author</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">georg</span><span style="color:#710">'</span></span>)
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>
+</pre></div>
+</div>
+</div>
+
+        </div>
+        <div class="col-xs-3 well right-nav">
+          <ul>
+            
+              <li>
+            <label class="tree-toggler level1">
+              <span class="glyphicon glyphicon-plus-sign glyphicon-small "></span>
+              Background
+            </label><ul class="tree" style="display: none"><li class=""><a href="/">Welcome!</a></li></ul></li>
+            
+              
+            
+          </div>
+        </div>
+      </div>
+      <div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <footer>Copyright (2013-2014) R. Pito Salas, pitosalas@gmail.com</footer>
+      </div>
+  </div>
+</div>
+
+
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="/bootstrap/js/custom.js"></script>
+    <script> $(document).ready(function() {
+     $('#tipue_search_input').tipuesearch();
+    });</script>
+
+  </body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>Vagrant Setup - Cosi 000</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bootstrap/css/custom.css">
+    
+<!--     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+ -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <script src="/tipuesearch/js/tipuesearch_content.js"></script>
+  <!-- <link href="/tipuesearch/css/tipuesearch.css" rel="stylesheet"> -->
+    <script src="/tipuesearch/js/tipuesearch_set.js"></script>
+    <script src="/tipuesearch/js/tipuesearch.js"></script>
+
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc 3.6.11">
+  </head>
+  <body>
+
+    
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+  <div class="row">
+    <div class="col-xs-7">
+      <a class="navbar-brand" href="/">Cosi 000 - Not a course</a>
+    </div>
+    <div class="col-xs-2">
+      <div class="btn-group">
+        
+          <a class="btn btn-mini" href="/content/topics/cribsheets/10_ruby_gems/"><i class="glyphicon glyphicon-chevron-left" rel="tooltip" title="previous page"></i></a> <a class="btn btn-mini" href="/content/topics/cribsheets/12_code_climate/"><i class="glyphicon glyphicon-chevron-right" rel="tooltip" title="next page"></i></a>
+        
+      </div>
+    </div>
+    <div class="col-xs-3">
+      <form role="form" class="form-inline" action="/search_index/search/index.html">
+        <div class="input-group input-group-sm">
+          <input type="text" name="q" id="tipue_search_input" placeholder="search..."class="form-control">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+        <h3>
+	Vagrant Setup
+	
+</h4>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-9">
+          <p><a href="http://www.vagrantup.com/">Vagrant</a> is a software that acts as a wrapper around <a href="http://en.wikipedia.org/wiki/Virtualization">virtualization</a> software like <a href="https://www.virtualbox.org/">VirtualBox</a> and <a href="http://www.vmware.com/">VMWare</a>, and provides a more convenient approach to setup reproducible and portable work environments and an efficient and flexible workflow. It can easily be integrated with <a href="http://docs.vagrantup.com/v2/provisioning/">provisioning tools</a> like Chef and Puppet, and there are many useful plugins that can be installed to add optional features. <br /><br />  </p>
+
+<h4 id="how-to-setup-vagrant">How to setup Vagrant</h4>
+
+<ol>
+  <li>Before installing Vagrant you should have one provider installed. For this course we recommend you to use <a href="https://www.virtualbox.org/">VirtualBox</a>. </li>
+  <li>After VirtualBox is installed (if you are using Windows make sure that you restart after installation completes), download <a href="http://goo.gl/5H4Jrn">the provided Vagrant box</a></li>
+  <li>Download Vagrant from <a href="http://www.vagrantup.com/downloads.html">here</a></li>
+  <li>Install it and make sure that you can run <code>vagrant</code> from your terminal (on windows run it in command prompt, and on OS X run it in Terminal app)</li>
+  <li>If you are using Windows, restart your computer after Vagrant installation completes.</li>
+  <li>Create a new directory anywhere you prefer. (This directory will contain Vagrant config file and all your projects’ files)</li>
+  <li>Open your terminal</li>
+  <li>Go to the directory you created in step 3 by running <code>cd &lt;path to your directory&gt;</code></li>
+  <li>Run <code>vagrant box add &lt;box name&gt; &lt;path to the .box file&gt;</code> (e.g. <code>vagrant box add ubuntu13.10 ubuntu-13.10-i386.box</code>)</li>
+  <li>Run <code>vagrant init &lt;box name&gt;</code>. Note: <code>&lt;box name&gt;</code> should be the same as the one you entered in step 6. (e.g. <code>vagrant init ubuntu13.10</code>)</li>
+  <li>Run <code>vagrant up</code></li>
+</ol>
+
+<p>If the last command works fine, you can connect to your box by running <code>vagrant ssh</code>. 
+<br /><br /></p>
+
+<h4 id="development-environment">Development Environment</h4>
+
+<p>You may put your projects’ files in the directory that you created during Vagrant setup so you would have access to it from your virual machine instance in /vagrant directory. You have two options to edit and run your codes:</p>
+
+<ol>
+  <li>
+    <p>You can install Sublime Text on your host machine and write your codes there and then run them on your virtual machine instance. This way you can interact with your vm instance via ssh. </p>
+  </li>
+  <li>
+    <p>You can interact with your vm instance via GUI, and write your codes and run them on your vm instance. If you choose this option you have to enable vm GUI in your Vagrant config file by editing Vagrantfile that has been generated in the directory you created while setting up Vagrant and writing/uncommenting the following lines:  </p>
+  </li>
+</ol>
+
+<pre>
+config.vm.provider :virtualbox do |vb|
+   vb.gui = true
+end
+</pre>
+
+<p><strong>Note</strong>: make sure you relaunch your vm instance after the changes by running <code>vagrant halt</code> and then <code>vagrant up</code>.</p>
+
+        </div>
+        <div class="col-xs-3 well right-nav">
+          <ul>
+            
+              <li>
+            <label class="tree-toggler level1">
+              <span class="glyphicon glyphicon-plus-sign glyphicon-small "></span>
+              Background
+            </label><ul class="tree" style="display: none"><li class=""><a href="/">Welcome!</a></li></ul></li>
+            
+              
+            
+          </div>
+        </div>
+      </div>
+      <div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <footer>Copyright (2013-2014) R. Pito Salas, pitosalas@gmail.com</footer>
+      </div>
+  </div>
+</div>
+
+
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="/bootstrap/js/custom.js"></script>
+    <script> $(document).ready(function() {
+     $('#tipue_search_input').tipuesearch();
+    });</script>
+
+  </body>
+</html>

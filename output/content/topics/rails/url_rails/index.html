@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>URL in Rails - Cosi 000</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bootstrap/css/custom.css">
+    
+<!--     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+ -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <script src="/tipuesearch/js/tipuesearch_content.js"></script>
+  <!-- <link href="/tipuesearch/css/tipuesearch.css" rel="stylesheet"> -->
+    <script src="/tipuesearch/js/tipuesearch_set.js"></script>
+    <script src="/tipuesearch/js/tipuesearch.js"></script>
+
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc 3.6.11">
+  </head>
+  <body>
+
+    
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+  <div class="row">
+    <div class="col-xs-7">
+      <a class="navbar-brand" href="/">Cosi 000 - Not a course</a>
+    </div>
+    <div class="col-xs-2">
+      <div class="btn-group">
+        
+          <a class="btn btn-mini" href="/content/topics/rails/scaling/"><i class="glyphicon glyphicon-chevron-left" rel="tooltip" title="previous page"></i></a> <a class="btn btn-mini" href="/content/topics/README/"><i class="glyphicon glyphicon-chevron-right" rel="tooltip" title="next page"></i></a>
+        
+      </div>
+    </div>
+    <div class="col-xs-3">
+      <form role="form" class="form-inline" action="/search_index/search/index.html">
+        <div class="input-group input-group-sm">
+          <input type="text" name="q" id="tipue_search_input" placeholder="search..."class="form-control">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+        <h3>
+	URL in Rails
+	
+</h4>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-9">
+          <h4 id="fundamental-importance-of-the-uriurl">Fundamental importance of the URI/URL</h4>
+<ul>
+  <li>URI = “Uniform Resource Identifier”
+    <ul>
+      <li>Used to be called “Universal Resource Locator” (URL)</li>
+      <li>Because the resources were files on the disk of the server</li>
+      <li>And the URL’s path was really a path!</li>
+    </ul>
+  </li>
+  <li>Focus now on the ‘path’ part of the URI</li>
+  <li>e.g. some ugly examples
+    <ul>
+      <li>http://roomscheduler.com/reserve/room/3</li>
+      <li>http://bookstore/gonewiththewind/order/3</li>
+      <li>http://nyt.com/latest-updates?year=2014</li>
+    </ul>
+  </li>
+  <li>e.g. some good examples
+    <ul>
+      <li>http://roomscheduler.com/room/3/request</li>
+      <li>http://bookstore.com/book/412/price</li>
+      <li>http://tourmanager.com/city/boston/tour/tuesday/new</li>
+    </ul>
+  </li>
+  <li>There are many ways to structure a url</li>
+</ul>
+
+<h4 id="restful-style-of-uri-design">RESTful style of URI design</h4>
+<ul>
+  <li>“Representational State Transfer” (See <a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm">Original REST Paper</a>)</li>
+  <li>Each URI denotes a specific ‘resource’
+    <ul>
+      <li>‘room 3’ or ‘book 412’ or ‘tuesday tours IN Boston city’</li>
+      <li>It is usually not a file but something generated ‘on the fly’</li>
+      <li>Still the same URI should yield the same resource every time (handwave)</li>
+    </ul>
+  </li>
+  <li>Each URI is used in combination with an HTTP “method”
+    <ul>
+      <li>Get: retrieve the indicated “resource”</li>
+      <li>Put: update value of the indicated resource</li>
+      <li>Delete: delete the indicated resource</li>
+      <li>Post: Create a new instance of indicated resource</li>
+      <li>(some other, less important ones)</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="one-of-the-earliest-design-questions">One of the earliest design questions</h4>
+<ul>
+  <li>What do the URLs for my app look like?</li>
+  <li>Conceptually, they are “directory structure-like” URLs</li>
+  <li>There is a coherent “syntax” about them, e.g.
+    <ul>
+      <li>http://www.myservice.org/discussion/topics/{topic}</li>
+      <li>http://www.myservice.org/discussion/2008/12/10/{topic}</li>
+      <li>http://www.myservice.org/discussion/{year}/{day}/{month}/{topic}</li>
+    </ul>
+  </li>
+  <li>Touchpoints, coming soon:
+    <ul>
+      <li>rails generate resource</li>
+      <li>rails routes</li>
+      <li>default controllers</li>
+      <li>In other words, you don’t have to follow this form of URL but…</li>
+      <li>You really should follow it because a lot of things fall into place.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="appendix">Appendix</h4>
+<ul>
+  <li><a href="http://guides.rubyonrails.org/routing.html">Rails Routing Guide</a></li>
+  <li><a href="http://www.ibm.com/developerworks/webservices/library/ws-restful/">RESTful Web Services: The Basics</a></li>
+</ul>
+
+        </div>
+        <div class="col-xs-3 well right-nav">
+          <ul>
+            
+              <li>
+            <label class="tree-toggler level1">
+              <span class="glyphicon glyphicon-plus-sign glyphicon-small "></span>
+              Background
+            </label><ul class="tree" style="display: none"><li class=""><a href="/">Welcome!</a></li></ul></li>
+            
+              
+            
+          </div>
+        </div>
+      </div>
+      <div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <footer>Copyright (2013-2014) R. Pito Salas, pitosalas@gmail.com</footer>
+      </div>
+  </div>
+</div>
+
+
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="/bootstrap/js/custom.js"></script>
+    <script> $(document).ready(function() {
+     $('#tipue_search_input').tipuesearch();
+    });</script>
+
+  </body>
+</html>

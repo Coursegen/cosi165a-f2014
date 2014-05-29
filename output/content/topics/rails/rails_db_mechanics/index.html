@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>Rails Database Mechanics - Cosi 000</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bootstrap/css/custom.css">
+    
+<!--     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+ -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <script src="/tipuesearch/js/tipuesearch_content.js"></script>
+  <!-- <link href="/tipuesearch/css/tipuesearch.css" rel="stylesheet"> -->
+    <script src="/tipuesearch/js/tipuesearch_set.js"></script>
+    <script src="/tipuesearch/js/tipuesearch.js"></script>
+
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc 3.6.11">
+  </head>
+  <body>
+
+    
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+  <div class="row">
+    <div class="col-xs-7">
+      <a class="navbar-brand" href="/">Cosi 000 - Not a course</a>
+    </div>
+    <div class="col-xs-2">
+      <div class="btn-group">
+        
+          <a class="btn btn-mini" href="/content/topics/rails/intro_rails/"><i class="glyphicon glyphicon-chevron-left" rel="tooltip" title="previous page"></i></a> <a class="btn btn-mini" href="/content/topics/rails/rails_db_models/"><i class="glyphicon glyphicon-chevron-right" rel="tooltip" title="next page"></i></a>
+        
+      </div>
+    </div>
+    <div class="col-xs-3">
+      <form role="form" class="form-inline" action="/search_index/search/index.html">
+        <div class="input-group input-group-sm">
+          <input type="text" name="q" id="tipue_search_input" placeholder="search..."class="form-control">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+        <h3>
+	Rails Database Mechanics
+	
+</h4>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-9">
+          <h4 id="rails-db-mechanics">Rails DB Mechanics</h4>
+<ul>
+  <li>ActiveRecord
+    <ul>
+      <li>Layer in RoR which is the connection between the rails application and the underlying database</li>
+      <li>For advanced designs, there are options other than Activerecord</li>
+    </ul>
+  </li>
+  <li>Naming
+    <ul>
+      <li>Model.rb file is named singular, e.g. User</li>
+      <li>Corresponding db table is plural and lower case, e.g. users</li>
+    </ul>
+  </li>
+  <li>Correspondences
+    <ul>
+      <li>Each instance of the class (e.g. User) corresponds to a single record in the dabase</li>
+      <li>When a query returns a bunch of records, you get a collection of instances of the class</li>
+      <li>(this is classic Active Record model)</li>
+    </ul>
+  </li>
+  <li>Attributes
+    <ul>
+      <li>Rails will automagically create the methods to access each field of the record in the database</li>
+    </ul>
+  </li>
+  <li>Different database ‘servers’
+    <ul>
+      <li>Sqllite - local database, no need for a server</li>
+      <li>MySql - Standard industrial strength database, free</li>
+      <li>Postgress - Becoming very popular with Rails community</li>
+    </ul>
+  </li>
+  <li>Migration <a href="http://guides.rubyonrails.org/migrations.html">Rails Guide: Migrations</a>
+    <ul>
+      <li>rails generate model -h</li>
+      <li>rails generate migration -h</li>
+    </ul>
+  </li>
+  <li>Datatypes supported by Rails
+    <ul>
+      <li><a href="/content/topics/cribsheets/db_types/">DB datatypes for Rails 4</a></li>
+    </ul>
+  </li>
+  <li>
+    <p>Queries and other ways to access the database</p>
+  </li>
+  <li>Validations
+    <ul>
+      <li><a href="/content/topics/cribsheets/rails_validations/">Rails Validations</a></li>
+    </ul>
+  </li>
+  <li>Tools and notes
+    <ul>
+      <li>Check out <a href="http://www.desertsandsoftware.com/?page_id=17">MesaSQLite</a></li>
+      <li>Handy Rake Info: <a href="/content/topics/cribsheets/rake_commands/">Rake “tasks” (commands)</a></li>
+    </ul>
+  </li>
+</ul>
+
+        </div>
+        <div class="col-xs-3 well right-nav">
+          <ul>
+            
+              <li>
+            <label class="tree-toggler level1">
+              <span class="glyphicon glyphicon-plus-sign glyphicon-small "></span>
+              Background
+            </label><ul class="tree" style="display: none"><li class=""><a href="/">Welcome!</a></li></ul></li>
+            
+              
+            
+          </div>
+        </div>
+      </div>
+      <div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <footer>Copyright (2013-2014) R. Pito Salas, pitosalas@gmail.com</footer>
+      </div>
+  </div>
+</div>
+
+
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="/bootstrap/js/custom.js"></script>
+    <script> $(document).ready(function() {
+     $('#tipue_search_input').tipuesearch();
+    });</script>
+
+  </body>
+</html>

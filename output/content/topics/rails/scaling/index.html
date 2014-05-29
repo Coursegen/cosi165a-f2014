@@ -1,0 +1,317 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>Scaling - Cosi 000</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bootstrap/css/custom.css">
+    
+<!--     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+ -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <script src="/tipuesearch/js/tipuesearch_content.js"></script>
+  <!-- <link href="/tipuesearch/css/tipuesearch.css" rel="stylesheet"> -->
+    <script src="/tipuesearch/js/tipuesearch_set.js"></script>
+    <script src="/tipuesearch/js/tipuesearch.js"></script>
+
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc 3.6.11">
+  </head>
+  <body>
+
+    
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+  <div class="row">
+    <div class="col-xs-7">
+      <a class="navbar-brand" href="/">Cosi 000 - Not a course</a>
+    </div>
+    <div class="col-xs-2">
+      <div class="btn-group">
+        
+          <a class="btn btn-mini" href="/content/topics/rails/rails_resources/"><i class="glyphicon glyphicon-chevron-left" rel="tooltip" title="previous page"></i></a> <a class="btn btn-mini" href="/content/topics/rails/url_rails/"><i class="glyphicon glyphicon-chevron-right" rel="tooltip" title="next page"></i></a>
+        
+      </div>
+    </div>
+    <div class="col-xs-3">
+      <form role="form" class="form-inline" action="/search_index/search/index.html">
+        <div class="input-group input-group-sm">
+          <input type="text" name="q" id="tipue_search_input" placeholder="search..."class="form-control">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+        <h3>
+	Scaling
+	
+</h4>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-9">
+          <h4 id="scaling-and-performance">Scaling and Performance</h4>
+<ul>
+  <li>Real world example: cafeteria flow chart</li>
+  <li>Optimization:the search for bottlenecks.</li>
+  <li>What’s a bottleneck? Refer back to the cafeteria example.</li>
+  <li>Moving target. 
+      * When you eliminate/improve one bottleneck, it just reveals the next one. 
+      * You make starting the dashboard activity faster….so that now you can notice that drawing the map overlay is slow.</li>
+  <li><strong>Important:</strong> Measurement</li>
+  <li><strong>Worse sin:</strong> Optimizing early. Why?</li>
+</ul>
+
+<h5 id="server-push">Server Push</h5>
+<ul>
+  <li>Review architecture and why</li>
+  <li>Look at code</li>
+</ul>
+
+<h5 id="performance">Performance</h5>
+<ul>
+  <li>Performance is what what a user experiences as “slow” or “fast”</li>
+  <li>Response time to an operation initiated by the user</li>
+  <li>Perception!
+    <ul>
+      <li>Can you ‘fool’ the user into thinking the app is faster than it is?</li>
+      <li>Feedback: spinners etc</li>
+      <li>Anticipation: start doing work before user requests it</li>
+    </ul>
+  </li>
+  <li>Different (but intertwined with) scaling</li>
+</ul>
+
+<div class="row">
+  <div class="col-md-offset-2 col-md-8">
+    <img src="/content/images/twittererror.png" class="img-responsive img-thumbnail" />
+  </div>
+</div>
+
+<h5 id="scaling">Scaling</h5>
+<ul>
+  <li>
+    <p>Image above is likely a scaling problem</p>
+  </li>
+  <li>“How many X per minute can you do”
+    <ul>
+      <li>(e.g. user log ins, page refreshes, notifications,…</li>
+    </ul>
+  </li>
+  <li>How many (users, sessions, videos, pictures, etc) does the site need to support</li>
+  <li>Different from response time: “How long does it take to accomplish Y?” Related but different</li>
+  <li>Scaling has to do with the load on the servers</li>
+  <li>Big challenge: how fast or slow will the site or app grow?</li>
+  <li>Architectural techniques apply equally
+    <ul>
+      <li>scaling up vs. scaling out</li>
+      <li>caching</li>
+      <li>load balancing</li>
+      <li>database partitioning and sharding</li>
+      <li>asynchronous processing</li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="patterns-of-scaling-problems-and-solutions">Patterns of scaling problems and solutions</h5>
+
+<ul>
+  <li>“Clients” = web browsers accessing the site, mobile apps accessing the site, etc.</li>
+  <li>Load on the servers. Some scenarios, one or more of:
+    <ul>
+      <li>Too many clients asking the server to do operation O
+ 	* Individual clients asking the server to do operation P too often</li>
+      <li>Operation Q is time consuming for the server to satisfy</li>
+    </ul>
+  </li>
+  <li>Solutions can be
+    <ul>
+      <li>Add an identical server to handle operations O, P or Q</li>
+      <li>Send operation O to one server and operation P to another server</li>
+      <li>Why are so many clients asking for O? Can we reduce the number?</li>
+      <li>What’s the reason why a client would ask for operation P so often? Can we reduce that?</li>
+      <li>Is there a way to make operation Q faster to satisfy?</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="techniques-caching">Techniques: Caching</h4>
+
+<ul>
+  <li>Save the result of a request with a given set of parameters.</li>
+  <li>In a future request with the same parameter (maybe) return the same result</li>
+  <li>Memoization: 
+    <ul>
+      <li>caching applied to an individual method</li>
+      <li>A basic programming technique</li>
+    </ul>
+  </li>
+  <li>System level caching. Storage:
+    <ul>
+      <li>In ‘local’ memory</li>
+      <li>In ‘remote’ memory</li>
+      <li>In database</li>
+      <li>In Cloud</li>
+    </ul>
+  </li>
+  <li>Name-value databases
+    <ul>
+      <li>Very fast searches and lookups</li>
+      <li>Distributed searches and distributed databases</li>
+      <li>Robust across system and application failures</li>
+    </ul>
+  </li>
+  <li>References:
+    <ul>
+      <li><a href="http://redis.io">Redis</a></li>
+      <li><a href="http://memcached.org">Memcached</a></li>
+      <li><a href="http://aws.amazon.com/elasticache/">Amazon Elastic Cache</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="techniques-asycnhronous-processing">Techniques: Asycnhronous processing</h4>
+<ul>
+  <li>Real examples: <em style="color: blue">Discussion:</em> <em>What do all of these have in common?</em>
+    <ul>
+      <li>Account registraton confirmation emails (actually all emails)</li>
+      <li>Daily (periodic or episodic) notification emails</li>
+      <li>Automatic backups or archiving</li>
+      <li>Image Resizing</li>
+      <li>Spam checking</li>
+    </ul>
+  </li>
+  <li>Synchronous: Caller <strong>waits</strong> for response</li>
+  <li>
+    <p>Asynchronous: Request returns immediately, but result comes later</p>
+  </li>
+  <li><em style="color: green">NB: web server mainly responds to http requests!</em></li>
+  <li>Background processing happens even if no requests!</li>
+  <li>How do processes work in a modern Operating System?
+    <ul>
+      <li>Scheduler part of the OS</li>
+      <li>Processes can be fairly heavy weight</li>
+      <li>Let’s estimate how many background processs you would need</li>
+      <li>How would you handle processes that:
+        <ul>
+          <li>Were taking too long?</li>
+          <li>Had crashed?</li>
+          <li>Needed to be restarted?</li>
+          <li>Or what if the server crashes as a whole?</li>
+          <li>It’s a mess. Need abstractions!</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="case-1-schedule-based">Case 1: Schedule based</h5>
+<ul>
+  <li>CRON jobs. Most elementary. Require “privileges”</li>
+  <li>Alternative: Native “scheduler” application (e.g. Heroku Simple Job Scheduler)</li>
+  <li>References:
+    <ul>
+      <li><a href="https://devcenter.heroku.com/articles/scheduled-jobs-custom-clock-processes#simple-job-scheduling">Heroku Simple Job Scheduler</a></li>
+      <li><a href="http://en.wikipedia.org/wiki/Cron">Unix Cron</a></li>
+      <li><a href="http://www.maclife.com/article/columns/terminal_101_creating_cron_jobs">Creating Cron Jobs on Mac</a></li>
+      <li><a href="http://guides.rubyonrails.org/command_line.html#rails-runner">Rails Runner</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="case-2-request-based">Case 2: Request based</h5>
+<ul>
+  <li>Request handled ‘asynchronously’ of course</li>
+  <li>By local server, in a separate process</li>
+  <li>By a remote server</li>
+  <li>Request queueing
+    <ul>
+      <li>What happens when requests come faster than we can handle them</li>
+      <li>How do we add more performance in handling request</li>
+    </ul>
+  </li>
+  <li>References
+    <ul>
+      <li><a href="http://www.sitepoint.com/comparing-ruby-background-processing-libraries-delayed-job/">Comparing Background processing Libraries</a></li>
+      <li><a href="https://github.com/collectiveidea/delayed_job">Rails Delayed Job Gem</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="techniques-databases">Techniques: Databases</h4>
+<p><em style="color: blue">Discussion:</em> <em>What if all the user names are stored in one table on one server?</em></p>
+
+<ul>
+  <li>Databases are a major bottleneck! Must move the data to more than one machine!</li>
+  <li>Need to undertand the access pattern: read intensive/write intensive</li>
+  <li>Database Replication
+    <ul>
+      <li>What does it do</li>
+      <li>What are the benefits</li>
+    </ul>
+  </li>
+  <li>Database Partitioning
+    <ul>
+      <li>What are the different kinds: Horizontal and Vertical</li>
+      <li>What does it do</li>
+      <li>What are the benefits</li>
+    </ul>
+  </li>
+  <li>Database Sharding
+    <ul>
+      <li>What does it do</li>
+      <li>What are the benefits</li>
+    </ul>
+  </li>
+  <li>References
+    <ul>
+      <li><a href="http://www.brentozar.com/archive/2013/05/the-basics-of-database-sharding/">The Basics Of Database Sharding</a></li>
+    </ul>
+  </li>
+</ul>
+
+        </div>
+        <div class="col-xs-3 well right-nav">
+          <ul>
+            
+              <li>
+            <label class="tree-toggler level1">
+              <span class="glyphicon glyphicon-plus-sign glyphicon-small "></span>
+              Background
+            </label><ul class="tree" style="display: none"><li class=""><a href="/">Welcome!</a></li></ul></li>
+            
+              
+            
+          </div>
+        </div>
+      </div>
+      <div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <footer>Copyright (2013-2014) R. Pito Salas, pitosalas@gmail.com</footer>
+      </div>
+  </div>
+</div>
+
+
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="/bootstrap/js/custom.js"></script>
+    <script> $(document).ready(function() {
+     $('#tipue_search_input').tipuesearch();
+    });</script>
+
+  </body>
+</html>

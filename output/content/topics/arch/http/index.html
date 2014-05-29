@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>HTTP for Rails - Cosi 000</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bootstrap/css/custom.css">
+    
+<!--     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+ -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <script src="/tipuesearch/js/tipuesearch_content.js"></script>
+  <!-- <link href="/tipuesearch/css/tipuesearch.css" rel="stylesheet"> -->
+    <script src="/tipuesearch/js/tipuesearch_set.js"></script>
+    <script src="/tipuesearch/js/tipuesearch.js"></script>
+
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc 3.6.11">
+  </head>
+  <body>
+
+    
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+  <div class="row">
+    <div class="col-xs-7">
+      <a class="navbar-brand" href="/">Cosi 000 - Not a course</a>
+    </div>
+    <div class="col-xs-2">
+      <div class="btn-group">
+        
+          <a class="btn btn-mini" href="/content/topics/arch/database_migration/"><i class="glyphicon glyphicon-chevron-left" rel="tooltip" title="previous page"></i></a> <a class="btn btn-mini" href="/content/topics/arch/internet_basics/"><i class="glyphicon glyphicon-chevron-right" rel="tooltip" title="next page"></i></a>
+        
+      </div>
+    </div>
+    <div class="col-xs-3">
+      <form role="form" class="form-inline" action="/search_index/search/index.html">
+        <div class="input-group input-group-sm">
+          <input type="text" name="q" id="tipue_search_input" placeholder="search..."class="form-control">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+        <h3>
+	HTTP for Rails
+	
+</h4>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-9">
+          <h4 id="http-is-a-network-protocol">HTTP is a network protocol</h4>
+<ul>
+  <li>Mental model: calling a function across a network
+    <ul>
+      <li>Client is the caller</li>
+      <li>Server is where the function exists</li>
+      <li>Client receives the result</li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="lets-use-telnet-to-make-such-a-call">Let’s use telnet to make such a ‘call’</h5>
+
+<pre><code>$ telnet example.com 80
+$ GET / HTTP/1.1
+$ Host: example.com
+</code></pre>
+
+<h5 id="deconstructing-the-call">Deconstructing the call</h5>
+<ul>
+  <li>“Call” includes:
+    <ul>
+      <li>target host (example.com)</li>
+      <li>target port on the host (80)</li>
+      <li>HTTP verb: “GET” (a.k.a. method) (ref: <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html">HTTP Method Definitions</a>)</li>
+      <li>address: (the path or “/”)</li>
+      <li>Version of HTTP protocol (1.1)</li>
+    </ul>
+  </li>
+  <li>There are lots of other “parameters” that are allowed in this call</li>
+</ul>
+
+<h5 id="deconstructing-the-returned-data-from-that-call">Deconstructing the returned data from that call</h5>
+<ul>
+  <li>(Reference: <a href="http://en.wikipedia.org/wiki/List_of_HTTP_header_fields">HTTP Response Fields</a>)</li>
+  <li>“Response” includes:
+    <ul>
+      <li>Status code: 200 (see [HTTP Status Codes(http://httpstatus.es)])</li>
+      <li>Accept-Ranges: bytes (lets the server tell the caller that it has that capability)</li>
+      <li>Cache-Control: max-age=604800, how long this response may be cached)</li>
+      <li><strong>Content-Type: text/html</strong> Tells recipient how to parse the result)</li>
+      <li>Date: Thu, 27 Feb 2014 00:33:26 GMT The current date time on the server)</li>
+      <li>Etag: “359670651” kind of a unique-id for caching purposes)</li>
+      <li>Expires: Thu, 06 Mar 2014 00:33:26 GMT (says when the page is required to expire)</li>
+      <li>Last-Modified: Fri, 09 Aug 2013 23:54:35 GMT (When this page was edited)</li>
+      <li>Server: ECS (ewr/1584) (Software running the server)</li>
+      <li>X-Cache: HIT (Page came out of a cache)</li>
+      <li>x-ec-custom-error: 1 (There was no error in the cache)</li>
+      <li><strong>Content-Length: 1270</strong> (Content following this is 1270 bytes)</li>
+    </ul>
+  </li>
+  <li>All this is followed by text that we know should be interpretted as text/html</li>
+</ul>
+
+<h4 id="what-are-the-http-methods">What are the HTTP Methods</h4>
+<ul>
+  <li>GET, PUT, POST, DELETE</li>
+  <li>Think of them like a reguired first argument to the call</li>
+  <li>The interpretation of the </li>
+</ul>
+
+<h4 id="simplified-view-of-the-world">Simplified view of the world</h4>
+
+<ul>
+  <li>Think of the relationship between the client (the user in a browser) and the server (the rails server) as a program calling a function!
+    <ul>
+      <li><strong>Call:</strong> CallUsingHTTP(“GET”, “www.brandeis.edu”, “/index.html”)</li>
+      <li><strong>Returns:</strong> Status code, Content type, Content, and potentially more</li>
+    </ul>
+  </li>
+</ul>
+
+        </div>
+        <div class="col-xs-3 well right-nav">
+          <ul>
+            
+              <li>
+            <label class="tree-toggler level1">
+              <span class="glyphicon glyphicon-plus-sign glyphicon-small "></span>
+              Background
+            </label><ul class="tree" style="display: none"><li class=""><a href="/">Welcome!</a></li></ul></li>
+            
+              
+            
+          </div>
+        </div>
+      </div>
+      <div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <footer>Copyright (2013-2014) R. Pito Salas, pitosalas@gmail.com</footer>
+      </div>
+  </div>
+</div>
+
+
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="/bootstrap/js/custom.js"></script>
+    <script> $(document).ready(function() {
+     $('#tipue_search_input').tipuesearch();
+    });</script>
+
+  </body>
+</html>

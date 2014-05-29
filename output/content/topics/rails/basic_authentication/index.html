@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>Adding basic authentication - Cosi 000</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bootstrap/css/custom.css">
+    
+<!--     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+ -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <script src="/tipuesearch/js/tipuesearch_content.js"></script>
+  <!-- <link href="/tipuesearch/css/tipuesearch.css" rel="stylesheet"> -->
+    <script src="/tipuesearch/js/tipuesearch_set.js"></script>
+    <script src="/tipuesearch/js/tipuesearch.js"></script>
+
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc 3.6.11">
+  </head>
+  <body>
+
+    
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+  <div class="row">
+    <div class="col-xs-7">
+      <a class="navbar-brand" href="/">Cosi 000 - Not a course</a>
+    </div>
+    <div class="col-xs-2">
+      <div class="btn-group">
+        
+          <a class="btn btn-mini" href="/content/topics/leanstartup/tuning_engine_of_growth/"><i class="glyphicon glyphicon-chevron-left" rel="tooltip" title="previous page"></i></a> <a class="btn btn-mini" href="/content/topics/rails/controllers_resources/"><i class="glyphicon glyphicon-chevron-right" rel="tooltip" title="next page"></i></a>
+        
+      </div>
+    </div>
+    <div class="col-xs-3">
+      <form role="form" class="form-inline" action="/search_index/search/index.html">
+        <div class="input-group input-group-sm">
+          <input type="text" name="q" id="tipue_search_input" placeholder="search..."class="form-control">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+        <h3>
+	Adding basic authentication
+	
+</h4>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-9">
+          <h4 id="rails-details-for-authentication">Rails Details for Authentication</h4>
+
+<h5 id="references">References</h5>
+<ul>
+  <li>Reference: <a href="http://ruby.railstutorial.org/chapters/modeling-users#book_menu">Ruby on Rails Tutorail</a> - Chapters 6,7 and 8</li>
+  <li>Reference: <a href="https://github.com/pitosalas/authdemo">AuthDemo source code</a></li>
+</ul>
+
+<h5 id="intro">Intro</h5>
+
+<ul>
+  <li>There are several popular gems to implement authentication</li>
+  <li>Beware that the fact that there is a gem does not mean that it’s trivial</li>
+  <li>You need to understand what’s going on.</li>
+  <li>Advice: Avoid getting fancy with OAuth, or FB or LinkedIn log in.</li>
+  <li>Start with a simple password</li>
+</ul>
+
+<h5 id="hassecurepassword">has_secure_password</h5>
+<ul>
+  <li>Line added to top of the model representing what is logging in</li>
+  <li>Might be Users, or Accounts, or whatever. The thing that logs in.</li>
+  <li>Makes base assumptions about that model</li>
+  <li>Database contains a field called password_digest (and does NOT contain a field called password)</li>
+  <li>Implements various aspects of the authentication model</li>
+  <li>Look at 
+    <ul>
+      <li>./db/schema.rb</li>
+      <li>./app/models/user.rb</li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="passworddigest-password-passwordconfirmation">password_digest, password, password_confirmation</h5>
+<ul>
+  <li>Database only stores password_digest</li>
+  <li>Model logic supplied by has_secure_password
+    <ul>
+      <li>On create: compare password, password_confirmation are equal</li>
+      <li>Computed a cryptographic hash (digest)</li>
+      <li>And store as password_digest</li>
+    </ul>
+  </li>
+</ul>
+
+<pre><code>User.create(email: "tim@brandeis.edu", password: "abc", password_confirmation: "abc")
+User.where(email: "tim@brandeis.edu").first.authenticate("abc")
+</code></pre>
+
+<h5 id="log-inout">Log in/out</h5>
+<ul>
+  <li>Displaying the log in page: see ./app/views/sessions/new.html.erb</li>
+  <li>Log in is a page like any other, needs a route</li>
+  <li>Will assume existance of a SessionsController with create, new and destroy actions. Check rake routes to see what routes are created</li>
+</ul>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#777"># ./config/routes.rb</span>
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  resources <span style="color:#A60">:sessions</span>, <span style="color:#606">only</span>: [<span style="color:#A60">:new</span>, <span style="color:#A60">:create</span>, <span style="color:#A60">:destroy</span>]
+</pre></div>
+</div>
+</div>
+
+<pre><code>   sessions POST   /sessions(.:format)       sessions#create
+new_session GET    /sessions/new(.:format)   sessions#new
+    session DELETE /sessions/:id(.:format)   sessions#destroy
+</code></pre>
+
+<h5 id="sessions-controller">Sessions Controller</h5>
+<ul>
+  <li>Tricky: Session is not a model!</li>
+  <li>Session controller maps a url (route) to some code</li>
+  <li>Specifically code to execute when loging in and out</li>
+  <li>session#new: display login box</li>
+  <li>session#create: try validate password and save “logged in status”</li>
+  <li>session#destroy: reset logged_in_status</li>
+</ul>
+
+<h5 id="building-a-form-of-any-kind">Building a form of any kind</h5>
+<ul>
+  <li>form_for is a view helper. Makes it easier to generate the required html for a form.</li>
+  <li>Effect of the form is to do an HTTP PUT. This is what submit does</li>
+  <li>URL for that form can come from the form_for method</li>
+</ul>
+
+<h5 id="activerecord-triggers">ActiveRecord Triggers</h5>
+<ul>
+  <li>Methods that get called before, during or after key activerecord events.</li>
+</ul>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#777"># ./app/models/user.rb</span>
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  before_save { <span style="color:#069">self</span>.email = email.downcase }
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>  before_create <span style="color:#A60">:create_remember_token</span>
+</pre></div>
+</div>
+</div>
+
+<h5 id="helpers-and-remember-token">Helpers and Remember Token</h5>
+<ul>
+  <li>Think of these as “view helpers”, used in creating and working with views and controllers</li>
+  <li>Remember Token Used in sessions so we don’t expose the actual ID of the user record</li>
+</ul>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#777"># ./app/helpers/sessions_helper.rb</span>
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">sign_in</span>(user)
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>    remember_token = <span style="color:#036;font-weight:bold">User</span>.new_remember_token
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>    cookies.permanent[<span style="color:#A60">:remember_token</span>] = remember_token
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>    user.update_attribute(<span style="color:#A60">:remember_token</span>, <span style="color:#036;font-weight:bold">User</span>.hash(remember_token))
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span>    <span style="color:#069">self</span>.current_user = user
+<span class="line-numbers"><a href="#n7" name="n7">7</a></span>  <span style="color:#080;font-weight:bold">end</span>
+</pre></div>
+</div>
+</div>
+
+        </div>
+        <div class="col-xs-3 well right-nav">
+          <ul>
+            
+              <li>
+            <label class="tree-toggler level1">
+              <span class="glyphicon glyphicon-plus-sign glyphicon-small "></span>
+              Background
+            </label><ul class="tree" style="display: none"><li class=""><a href="/">Welcome!</a></li></ul></li>
+            
+              
+            
+          </div>
+        </div>
+      </div>
+      <div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <footer>Copyright (2013-2014) R. Pito Salas, pitosalas@gmail.com</footer>
+      </div>
+  </div>
+</div>
+
+
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="/bootstrap/js/custom.js"></script>
+    <script> $(document).ready(function() {
+     $('#tipue_search_input').tipuesearch();
+    });</script>
+
+  </body>
+</html>
