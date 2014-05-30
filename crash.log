@@ -1,57 +1,54 @@
-Crashlog created at 2014-05-29 17:34:46 -0400
+Crashlog created at 2014-05-30 13:45:21 -0400
 
 ===== MESSAGE:
 
-RuntimeError: lean_startup: invalid reference in section "lectures"
+NoMethodError: undefined method `collapsed?' for "background":String
 
 ===== COMPILATION STACK:
 
-  - [item]   /content/lectures/welcome/welcome/ (rep default)
+  - [item]   /content/background/01_pitofaq/ (rep default)
 
 ===== STACK TRACE:
 
-  0. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/coursegen-0.0.2/lib/coursegen/course/lib/section.rb:22:in `find_by_short_name'
-  1. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/coursegen-0.0.2/lib/coursegen/course/lib/toc.rb:51:in `lookup_citem'
-  2. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/coursegen-0.0.2/lib/coursegen/course/helpers/content_helpers.rb:13:in `lookup_nitem'
-  3. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/coursegen-0.0.2/lib/coursegen/course/helpers/navigation_helpers.rb:37:in `link_to_section'
-  4. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/coursegen-0.0.2/lib/coursegen/course/helpers/navigation_helpers.rb:4:in `link_to_lecture'
-  5. item /content/lectures/welcome/welcome/ (rep default):47:in `get_binding'
-  6. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/2.1.0/erb.rb:850:in `eval'
-  7. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/2.1.0/erb.rb:850:in `result'
-  8. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/filters/erb.rb:34:in `run'
-  9. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/base/compilation/filter.rb:121:in `setup_and_run'
-  10. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/base/result_data/item_rep.rb:339:in `filter'
-  11. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/base/compilation/item_rep_proxy.rb:47:in `filter'
-  12. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/base/compilation/rule_context.rb:61:in `filter'
-  13. ./Rules:56:in `block (2 levels) in load'
-  14. ./Rules:50:in `each'
-  15. ./Rules:50:in `block in load'
-  16. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/base/compilation/rule.rb:70:in `instance_eval'
-  17. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/base/compilation/rule.rb:70:in `apply_to'
-  18. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/base/compilation/compiler.rb:385:in `compile_rep'
-  19. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/base/compilation/compiler.rb:341:in `block in compile_reps'
-  20. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/base/compilation/compiler.rb:334:in `loop'
-  21. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/base/compilation/compiler.rb:334:in `compile_reps'
-  22. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/base/compilation/compiler.rb:89:in `run'
-  23. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/base/source_data/site.rb:58:in `compile'
-  24. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/cli/commands/compile.rb:397:in `block in run'
-  25. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/cli/commands/compile.rb:438:in `run_listeners_while'
-  26. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/cli/commands/compile.rb:396:in `run'
-  27. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/cli/command_runner.rb:14:in `block in call'
-  28. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/cli/error_handler.rb:74:in `handle_while'
-  29. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/cli/error_handler.rb:26:in `handle_while'
-  30. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/cli/command_runner.rb:13:in `call'
-  31. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/cri-2.6.0/lib/cri/command_dsl.rb:223:in `block in runner'
-  32. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/cri-2.6.0/lib/cri/command.rb:298:in `call'
-  33. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/cri-2.6.0/lib/cri/command.rb:298:in `run_this'
-  34. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/cri-2.6.0/lib/cri/command.rb:251:in `run'
-  35. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/cri-2.6.0/lib/cri/command.rb:264:in `run'
-  36. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/cli.rb:59:in `block in run'
-  37. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/cli/error_handler.rb:74:in `handle_while'
-  38. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/cli/error_handler.rb:26:in `handle_while'
-  39. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/cli.rb:57:in `run'
-  40. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/bin/nanoc:19:in `<top (required)>'
-  41. /Users/pitosalas/.rbenv/versions/2.1.1/bin/nanoc:23:in `load'
+  0. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/coursegen-0.0.3/lib/coursegen/course/lib/citem.rb:49:in `collapsed?'
+  1. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/coursegen-0.0.3/lib/coursegen/course/helpers/sidebar_helpers.rb:7:in `section_helper'
+  2. layout /course/:43:in `block in get_binding'
+  3. layout /course/:42:in `each'
+  4. layout /course/:42:in `get_binding'
+  5. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/2.1.0/erb.rb:850:in `eval'
+  6. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/2.1.0/erb.rb:850:in `result'
+  7. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/filters/erb.rb:34:in `run'
+  8. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/base/compilation/filter.rb:121:in `setup_and_run'
+  9. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/base/result_data/item_rep.rb:403:in `layout'
+  10. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/base/compilation/item_rep_proxy.rb:69:in `layout'
+  11. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/base/compilation/rule_context.rb:74:in `layout'
+  12. ./Rules:59:in `block in load'
+  13. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/base/compilation/rule.rb:70:in `instance_eval'
+  14. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/base/compilation/rule.rb:70:in `apply_to'
+  15. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/base/compilation/compiler.rb:385:in `compile_rep'
+  16. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/base/compilation/compiler.rb:341:in `block in compile_reps'
+  17. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/base/compilation/compiler.rb:334:in `loop'
+  18. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/base/compilation/compiler.rb:334:in `compile_reps'
+  19. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/base/compilation/compiler.rb:89:in `run'
+  20. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/base/source_data/site.rb:58:in `compile'
+  21. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/cli/commands/compile.rb:397:in `block in run'
+  22. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/cli/commands/compile.rb:438:in `run_listeners_while'
+  23. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/cli/commands/compile.rb:396:in `run'
+  24. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/cli/command_runner.rb:14:in `block in call'
+  25. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/cli/error_handler.rb:74:in `handle_while'
+  26. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/cli/error_handler.rb:26:in `handle_while'
+  27. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/cli/command_runner.rb:13:in `call'
+  28. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/cri-2.6.0/lib/cri/command_dsl.rb:223:in `block in runner'
+  29. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/cri-2.6.0/lib/cri/command.rb:298:in `call'
+  30. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/cri-2.6.0/lib/cri/command.rb:298:in `run_this'
+  31. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/cri-2.6.0/lib/cri/command.rb:251:in `run'
+  32. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/cri-2.6.0/lib/cri/command.rb:264:in `run'
+  33. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/cli.rb:59:in `block in run'
+  34. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/cli/error_handler.rb:74:in `handle_while'
+  35. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/cli/error_handler.rb:26:in `handle_while'
+  36. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib/nanoc/cli.rb:57:in `run'
+  37. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/bin/nanoc:19:in `<top (required)>'
+  38. /Users/pitosalas/.rbenv/versions/2.1.1/bin/nanoc:23:in `load'
 
 ===== VERSION INFORMATION:
 
@@ -90,7 +87,7 @@ Darwin Monster.local 13.2.0 Darwin Kernel Version 13.2.0: Thu Apr 17 23:03:13 PD
   colored 1.2
   columnize 0.8.9
   coolline 0.4.3
-  coursegen 0.0.1, 0.0.2
+  coursegen 0.0.1, 0.0.2, 0.0.3
   cri 2.6.0
   debug_inspector 0.0.2
   debugger 1.6.6
@@ -215,15 +212,13 @@ Darwin Monster.local 13.2.0 Darwin Kernel Version 13.2.0: Thu Apr 17 23:03:13 PD
 
 Apple_PubSub_Socket_Render => "/tmp/launch-rxs9GM/Render"
 COLORFGBG => "0;15"
-COLUMNS => "138"
 DISPLAY => "/tmp/launch-bL7m58/org.macosforge.xquartz:0"
 EDITOR => "subl -w"
 GEM_EDITOR => "subl"
 HOME => "/Users/pitosalas"
-ITERM_PROFILE => "New Profile"
-ITERM_SESSION_ID => "w0t1p0"
+ITERM_PROFILE => "Default"
+ITERM_SESSION_ID => "w1t3p0"
 LANG => "en_US.UTF-8"
-LINES => "23"
 LOGNAME => "pitosalas"
 OLDPWD => "/usr/local/Cellar/rbenv-gem-rehash/1.0.0"
 PATH => "/Users/pitosalas/.rbenv/versions/2.1.1/bin:/usr/local/Cellar/rbenv/0.4.0/libexec:/usr/local/heroku/bin:/Users/pitosalas/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin"
@@ -245,60 +240,42 @@ __CHECKFIX1436934 => "1"
 
 ===== LOAD PATHS:
 
-  0. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/grit-2.5.0/lib
-  1. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib
-  2. /usr/local/Cellar/rbenv-gem-rehash/1.0.0
-  3. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/colored-1.2/lib
-  4. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/cri-2.6.0/lib
-  5. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib
-  6. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/bundler-1.6.2/lib
-  7. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib
-  8. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/mini_portile-0.5.3/lib
-  9. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/extensions/x86_64-darwin-13/2.1.0-static/nokogiri-1.6.1
-  10. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nokogiri-1.6.1/lib
-  11. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/jsmin-1.0.1/lib
-  12. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-toolbox-0.1.3/lib
-  13. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/coursegen-0.0.2/lib
-  14. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/coderay-1.1.0/lib
-  15. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/slop-3.5.0/lib
-  16. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/method_source-0.8.2/lib
-  17. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/pry-0.9.12.6/lib
-  18. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/columnize-0.8.9/lib
-  19. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/debugger-ruby_core_source-1.3.2/lib
-  20. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/debugger-linecache-1.2.0/lib
-  21. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/extensions/x86_64-darwin-13/2.1.0-static/debugger-1.6.6
-  22. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/debugger-1.6.6/lib
-  23. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/pry-debugger-0.2.2/lib
-  24. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/i18n-0.6.9/lib
-  25. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/thread_safe-0.3.3/lib
-  26. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/tzinfo-1.1.0/lib
-  27. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/minitest-5.3.3/lib
-  28. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/activesupport-4.1.0/lib
-  29. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/structured_warnings-0.1.4/lib
-  30. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/rubytree-0.9.3/lib
-  31. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/kramdown-1.3.3/lib
-  32. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/hirb-0.7.1/lib
-  33. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/pry-remote-0.1.8/lib
-  34. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/extensions/x86_64-darwin-13/2.1.0-static/debug_inspector-0.0.2
-  35. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/debug_inspector-0.0.2/lib
-  36. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/extensions/x86_64-darwin-13/2.1.0-static/binding_of_caller-0.7.2
-  37. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/binding_of_caller-0.7.2/lib
-  38. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/pry-stack_explorer-0.4.9.1/lib
-  39. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/yard-0.8.7.4/lib
-  40. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/pry-doc-0.6.0/lib
-  41. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/diffy-3.0.4/lib
-  42. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/extensions/x86_64-darwin-13/2.1.0-static/posix-spawn-0.3.8
-  43. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/posix-spawn-0.3.8/lib
-  44. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/mime-types-1.25.1/lib
-  45. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/diff-lcs-1.2.5/lib
-  46. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/grit-2.5.0/lib
-  47. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/pry-git-0.2.3/lib
-  48. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/pry-rails-0.3.2/lib
-  49. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/site_ruby/2.1.0
-  50. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/site_ruby/2.1.0/x86_64-darwin13.0
-  51. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/site_ruby
-  52. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/vendor_ruby/2.1.0
-  53. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/vendor_ruby/2.1.0/x86_64-darwin13.0
-  54. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/vendor_ruby
-  55. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/2.1.0
-  56. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/2.1.0/x86_64-darwin13.0
+  0. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib
+  1. /usr/local/Cellar/rbenv-gem-rehash/1.0.0
+  2. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/colored-1.2/lib
+  3. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/cri-2.6.0/lib
+  4. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-3.6.11/lib
+  5. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/bundler-1.6.2/lib
+  6. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib
+  7. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/mini_portile-0.5.3/lib
+  8. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/extensions/x86_64-darwin-13/2.1.0-static/nokogiri-1.6.1
+  9. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nokogiri-1.6.1/lib
+  10. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/jsmin-1.0.1/lib
+  11. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/nanoc-toolbox-0.1.3/lib
+  12. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/coursegen-0.0.3/lib
+  13. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/coderay-1.1.0/lib
+  14. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/slop-3.5.0/lib
+  15. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/method_source-0.8.2/lib
+  16. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/pry-0.9.12.6/lib
+  17. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/columnize-0.8.9/lib
+  18. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/debugger-ruby_core_source-1.3.2/lib
+  19. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/debugger-linecache-1.2.0/lib
+  20. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/extensions/x86_64-darwin-13/2.1.0-static/debugger-1.6.6
+  21. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/debugger-1.6.6/lib
+  22. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/pry-debugger-0.2.2/lib
+  23. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/i18n-0.6.9/lib
+  24. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/thread_safe-0.3.3/lib
+  25. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/tzinfo-1.1.0/lib
+  26. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/minitest-5.3.3/lib
+  27. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/activesupport-4.1.0/lib
+  28. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/structured_warnings-0.1.4/lib
+  29. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/rubytree-0.9.3/lib
+  30. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/kramdown-1.3.3/lib
+  31. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/site_ruby/2.1.0
+  32. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/site_ruby/2.1.0/x86_64-darwin13.0
+  33. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/site_ruby
+  34. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/vendor_ruby/2.1.0
+  35. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/vendor_ruby/2.1.0/x86_64-darwin13.0
+  36. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/vendor_ruby
+  37. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/2.1.0
+  38. /Users/pitosalas/.rbenv/versions/2.1.1/lib/ruby/2.1.0/x86_64-darwin13.0

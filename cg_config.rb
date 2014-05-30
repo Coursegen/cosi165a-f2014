@@ -13,7 +13,7 @@ COURSE_LONG_NAME = "IT Entrepreneurship"
 # Sections in the right hand margin of the page
 SECTION_CONFIG = [
   SectionDef.new("Background", "background", type: :section, collapsed: false),
-  SectionDef.new("Incubator", "incubator", type: :section, collapsed: false),
+  SectionDef.new("Incubator", "incubator", type: :section, collapsed: true),
   SectionDef.new("Lectures", "lectures", type: :lecture),
   SectionDef.new("Topics", "topics", hidden: true, type: :section)
 ]
