@@ -3,7 +3,9 @@ title: Interesting links
 ---
 ##### Links to articles related to entrepreneurship
 
-* * [How SnapChat will make money](http://www.businessinsider.com/how-snapchat-will-make-money-2013-11?op=1)
+* [Why you should never ask your customer to price your product](http://practicetrumpstheory.com/2013/09/why-you-should-never-ask-customers-what-theyll-pay/?curator=MediaREDEF)
+* [The Pivot](http://dilbert.com/blog/entry/the_pivot/)
+* [How SnapChat will make money](http://www.businessinsider.com/how-snapchat-will-make-money-2013-11?op=1)
 * [Disney Struggles to Make Its Free Gaming Apps Pay](http://www.nytimes.com/2013/11/18/business/media/disney-struggles-to-make-its-free-gaming-apps-pay.html?hpw&rref=business&_r=0)
 * [The Price of Free Apps](http://www.theverge.com/2013/1/7/3835724/the-price-of-apps)
 * [How To Price Something](http://37signals.com/svn/posts/3394-how-to-price-something)
