@@ -3,6 +3,11 @@ title: Interesting links
 ---
 ##### Links to articles related to entrepreneurship
 
+* [Learn advanced Rake in 7 episodes](http://devblog.avdi.org/2014/04/30/learn-advanced-rake-in-7-episodes/)
+* [How to be a great software developer](http://peternixey.com/post/83510597580/how-to-be-a-great-software-developer)
+* [Why composition is often better than inheritance](http://joostdevblog.blogspot.com/2014/07/why-composition-is-often-better-than.html)
+* [Think Like a Git](http://think-like-a-git.net/sections/about-this-site.html)
+* [Low Findability and Discoverability: Four Testing Methods to Identify the Causes](http://www.nngroup.com/articles/navigation-ia-tests/?utm_source=Alertbox&utm_campaign=bf909bb05b-Alertbox_email_07_07_2014&utm_medium=email&utm_term=0_7f29a2b335-bf909bb05b-40070533)
 * [Why you should never ask your customer to price your product](http://practicetrumpstheory.com/2013/09/why-you-should-never-ask-customers-what-theyll-pay/?curator=MediaREDEF)
 * [The Pivot](http://dilbert.com/blog/entry/the_pivot/)
 * [How SnapChat will make money](http://www.businessinsider.com/how-snapchat-will-make-money-2013-11?op=1)
