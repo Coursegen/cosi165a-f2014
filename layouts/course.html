@@ -37,11 +37,16 @@
         <div class="col-xs-9">
           <%= yield %>
         </div>
-        <div class="col-xs-3 well right-nav">
-          <ul>
-            <% SECTION_CONFIG.each do |sbb| %>
-              <%= section_helper(title: sbb.title, selector: sbb.selector) unless sbb.options[:hidden] %>
-            <% end %>
+        <div class="col-xs-3">
+          <div class="well right-nav">
+              <%= render "helpful_box" %>
+          </div>
+          <div "well right-nav">
+            <ul>
+              <% SECTION_CONFIG.each do |sbb| %>
+                <%= section_helper(title: sbb.title, selector: sbb.selector) unless sbb.options[:hidden] %>
+              <% end %>
+            </ul>
           </div>
         </div>
       </div>
@@ -51,6 +56,7 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <script src="/bootstrap/js/custom.js"></script>
+    <script src="/chalkmark/chalkmark.js"></script>
     <script> $(document).ready(function() {
      $('#tipue_search_input').tipuesearch();
     });</script>
