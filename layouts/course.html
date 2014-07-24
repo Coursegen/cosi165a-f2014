@@ -7,16 +7,10 @@
     
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="/bootstrap/css/custom.css">
-    
-<!--     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
- -->
     <script src="https://code.jquery.com/jquery.js"></script>
-
-    <script src="/tipuesearch/js/tipuesearch_content.js"></script>
-  <!-- <link href="/tipuesearch/css/tipuesearch.css" rel="stylesheet"> -->
-    <script src="/tipuesearch/js/tipuesearch_set.js"></script>
-    <script src="/tipuesearch/js/tipuesearch.js"></script>
-
+    <script src="/tipuesearch/tipuesearch_set.js"></script>
+    <script src="/tipuesearch/tipuesearch_content.js"></script>
+    <script src="/tipuesearch/tipuesearchmin.js"></script>
 
     <!-- you don't need to keep this, but it's cool for stats! -->
     <meta name="generator" content="nanoc <%= Nanoc::VERSION %>">
@@ -58,8 +52,7 @@
     <script src="/bootstrap/js/custom.js"></script>
     <script src="/chalkmark/chalkmark.js"></script>
     <script> $(document).ready(function() {
-     $('#tipue_search_input').tipuesearch();
+      $('#tipue_search_input').tipuesearch({'highlightEveryTerm': true, 'show': 8, 'showURL': false, 'descriptiveWords': 50});
     });</script>
-
   </body>
 </html>
