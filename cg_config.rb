@@ -20,8 +20,10 @@ LECTURES_SCHEDULE_CONFIG = ScheduleDef.new(
 
 # Sections in the right hand margin of the page
 SECTION_CONFIG = [
-  SectionDef.new("Background", "background", type: :section, collapsed: false),
+  SectionDef.new("Welcome", "welcome", type: :section, collapsed: false),
   SectionDef.new("Lectures", "lectures", type: :lecture, schedule: LECTURES_SCHEDULE_CONFIG),
-  SectionDef.new("Incubator", "incubator", type: :section, collapsed: true),
-  SectionDef.new("Topics", "topics", hidden: true, type: :section)
+  SectionDef.new("Projects", "incubator", type: :section, collapsed: true),
+  SectionDef.new("Background", "background", type: :section, collapsed: false),
+  SectionDef.new("Topics", "topics", hidden: true, type: :section), 
+  SectionDef.new("Hidden", "hidden", hidden: true, type: :section)
 ]
