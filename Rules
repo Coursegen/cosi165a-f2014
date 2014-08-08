@@ -75,7 +75,6 @@ route "/tipuesearch_logic/tipuesearch_content/" do
   '/tipuesearch/tipuesearch_content.js'
 end
 
-
 route '/chalkmark/*' do
   @item.identifier.chop + '.' + @item[:extension]
 end
