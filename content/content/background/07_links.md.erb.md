@@ -3,6 +3,7 @@ title: Interesting links
 ---
 ##### Links to articles related to entrepreneurship
 
+* [Movie: Something Ventured](http://www.netflix.com/WiMovie/70177632?trkid=2361637) about the VC world and Silicon Valley
 * [Learn advanced Rake in 7 episodes](http://devblog.avdi.org/2014/04/30/learn-advanced-rake-in-7-episodes/)
 * [How to be a great software developer](http://peternixey.com/post/83510597580/how-to-be-a-great-software-developer)
 * [Why composition is often better than inheritance](http://joostdevblog.blogspot.com/2014/07/why-composition-is-often-better-than.html)
