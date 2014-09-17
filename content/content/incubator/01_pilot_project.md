@@ -25,7 +25,9 @@ This vision is purposely vague and allows many different implementations and ins
 
 A presentation/discussion covering all the elements of the lean startup process including:
 
+1. Vision (revised): Describe your product or service, in one tweet and then in a paragraph.
 1. Hypotheses: is it a customer, problem or solution hypothesis? Any leap of faith? Which ones would you, did you or should you test first?
 1. Building: Getting out of the building. Which hypotheses did you validate, what tools did you use, what were the results?
 1. MVP: MVP What MVP did you create or would you create. How did you or would you use it to validate the hypotheses?
 1. Pivots: What pivots do you anticipate and why? How would you handle them?
+1. Conclusion: Do you think this product would work? Could it make money? Would you invest in it?
