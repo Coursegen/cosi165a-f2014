@@ -1,13 +1,12 @@
 ---
 title: Interesting links
 ---
-##### Links to articles related to entrepreneurship
+##### Links to articles that you might find useful
 
 
 * [Cloud Computing is forcing a rethink of IP](http://bits.blogs.nytimes.com/2014/10/11/cloud-computing-is-forcing-a-rethink-of-intellectual-property/?smid=nytcore-ipad-share&smprod=nytcore-ipad)
 * [How to make sense of conflicting startup advice](http://www.bothsidesofthetable.com/2014/08/30/here-is-how-to-make-sense-of-conflicting-startup-advice/)
 * [Cryptic Genetic Variation in Software-Hundting a 41 year old bug](https://cryptogenomicon.wordpress.com/2014/10/13/cryptic-genetic-variation-in-software-hunting-a-buffered-41-year-old-bug/)
-* [How to make sense out of conflicting startup advice](http://www.bothsidesofthetable.com/2014/08/30/here-is-how-to-make-sense-of-conflicting-startup-advice/)
 * [Leaders of dead startups share the reasons why they failed](http://bigthink.com/ideafeed/leaders-of-dead-startups-share-reasons-why-they-failed)
 * [Animation for Attention and Comprehension](http://www.nngroup.com/articles/animation-usability/?utm_source=Alertbox&utm_campaign=2dc84617a9-Animation_09_22_2014&utm_medium=email&utm_term=0_7f29a2b335-2dc84617a9-40070533)
 * [Movie: Something Ventured](http://www.netflix.com/WiMovie/70177632?trkid=2361637) about the VC world and Silicon Valley
