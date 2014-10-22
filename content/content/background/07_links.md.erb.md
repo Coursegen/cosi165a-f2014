@@ -4,6 +4,8 @@ title: Interesting links
 ##### Links to articles related to entrepreneurship
 
 
+* [Cloud Computing is forcing a rethink of IP](http://bits.blogs.nytimes.com/2014/10/11/cloud-computing-is-forcing-a-rethink-of-intellectual-property/?smid=nytcore-ipad-share&smprod=nytcore-ipad)
+* [How to make sense of conflicting startup advice](http://www.bothsidesofthetable.com/2014/08/30/here-is-how-to-make-sense-of-conflicting-startup-advice/)
 * [Cryptic Genetic Variation in Software-Hundting a 41 year old bug](https://cryptogenomicon.wordpress.com/2014/10/13/cryptic-genetic-variation-in-software-hunting-a-buffered-41-year-old-bug/)
 * [How to make sense out of conflicting startup advice](http://www.bothsidesofthetable.com/2014/08/30/here-is-how-to-make-sense-of-conflicting-startup-advice/)
 * [Leaders of dead startups share the reasons why they failed](http://bigthink.com/ideafeed/leaders-of-dead-startups-share-reasons-why-they-failed)
