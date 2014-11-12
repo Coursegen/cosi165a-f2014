@@ -3,7 +3,8 @@ title: Interesting links
 ---
 ##### Links to articles that you might find useful
 
-
+* [Cohort Analysis: 3 Rules to Actionable Metrics](http://practicetrumpstheory.com/3-rules-to-actionable-metrics/)
+* [How to be a growth hacker](http://andrewchen.co/how-to-be-a-growth-hacker-an-airbnbcraigslist-case-study/)
 * [Cloud Computing is forcing a rethink of IP](http://bits.blogs.nytimes.com/2014/10/11/cloud-computing-is-forcing-a-rethink-of-intellectual-property/?smid=nytcore-ipad-share&smprod=nytcore-ipad)
 * [How to make sense of conflicting startup advice](http://www.bothsidesofthetable.com/2014/08/30/here-is-how-to-make-sense-of-conflicting-startup-advice/)
 * [Cryptic Genetic Variation in Software-Hundting a 41 year old bug](https://cryptogenomicon.wordpress.com/2014/10/13/cryptic-genetic-variation-in-software-hunting-a-buffered-41-year-old-bug/)
