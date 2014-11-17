@@ -3,6 +3,12 @@ title: Interesting links
 ---
 ##### Links to articles that you might find useful
 
+* [Dave McClure on Pirate Metrics](http://igniteshow.com/videos/startup-metrics-pirates-aarrr)
+* [Laws of Cloud SAAS Growth](http://www.bvp.com/sites/default/files/bvps_10_laws_of_cloud_saas_winter_2010_release.pdf)
+* [The Price of Free Apps](http://www.theverge.com/2013/1/7/3835724/the-price-of-apps)
+* [How To Price Something](http://37signals.com/svn/posts/3394-how-to-price-something)
+* [Disney Struggles to Make Its Free Gaming Apps Pay](http://www.nytimes.com/2013/11/18/business/media/disney-struggles-to-make-its-free-gaming-apps-pay.html?hpw&rref=business&_r=0)
+* [How SnapChat will make money](http://www.businessinsider.com/how-snapchat-will-make-money-2013-11?op=1)
 * [Cohort Analysis: 3 Rules to Actionable Metrics](http://practicetrumpstheory.com/3-rules-to-actionable-metrics/)
 * [How to be a growth hacker](http://andrewchen.co/how-to-be-a-growth-hacker-an-airbnbcraigslist-case-study/)
 * [Cloud Computing is forcing a rethink of IP](http://bits.blogs.nytimes.com/2014/10/11/cloud-computing-is-forcing-a-rethink-of-intellectual-property/?smid=nytcore-ipad-share&smprod=nytcore-ipad)
