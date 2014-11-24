@@ -1,4 +1,3 @@
-output/*
-
-tmp/*
+output/**
+tmp/**
 crash.log
