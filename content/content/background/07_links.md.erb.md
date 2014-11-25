@@ -3,6 +3,7 @@ title: Interesting links
 ---
 ##### Links to articles that you might find useful
 
+* [A Practical Introduction to Git](http://mrchlblng.me/2014/09/practical-git-introduction/)
 * [Dave McClure on Pirate Metrics](http://igniteshow.com/videos/startup-metrics-pirates-aarrr)
 * [Laws of Cloud SAAS Growth](http://www.bvp.com/sites/default/files/bvps_10_laws_of_cloud_saas_winter_2010_release.pdf)
 * [The Price of Free Apps](http://www.theverge.com/2013/1/7/3835724/the-price-of-apps)
