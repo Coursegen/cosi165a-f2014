@@ -3,6 +3,7 @@ title: Interesting links
 ---
 ##### Links to articles that you might find useful
 
+* [Making a simple db driv3en website with sinatra and heroku](http://samuelstern.wordpress.com/2012/11/28/making-a-simple-database-driven-website-with-sinatra-and-heroku/)
 * [A Practical Introduction to Git](http://mrchlblng.me/2014/09/practical-git-introduction/)
 * [Dave McClure on Pirate Metrics](http://igniteshow.com/videos/startup-metrics-pirates-aarrr)
 * [Laws of Cloud SAAS Growth](http://www.bvp.com/sites/default/files/bvps_10_laws_of_cloud_saas_winter_2010_release.pdf)
