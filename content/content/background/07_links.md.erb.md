@@ -2,11 +2,13 @@
 title: Interesting links
 ---
 ##### Links to articles that you might find useful
-* Ref: [All about email regex](http://www.regular-expressions.info/email.html)
+* [All about email regex](http://www.regular-expressions.info/email.html)
 * [Heroku: Getting Started With Rails](https://devcenter.heroku.com/articles/getting-started-with-rails4)
 * [Classification of Cloud Services](http://bitheads.com/what-types-of-cloud-services-are-available/)
 * [Martin Fowler on Feature Toggle](http://martinfowler.com/bliki/FeatureToggle.html)
-* [Fearure Switches at Flickr](http://code.flickr.net/2009/12/02/flipping-out/)
+* [Feature Switches at Flickr](http://code.flickr.net/2009/12/02/flipping-out/)
+* [Rethinking Crossing the Chasm](http://readwrite.com/2007/08/06/rethinking_crossing_the_chasm)
+* [Making a simple db driven website with sinatra and heroku](http://samuelstern.wordpress.com/2012/11/28/making-a-simple-database-driven-website-with-sinatra-and-heroku/)
 * [A Practical Introduction to Git](http://mrchlblng.me/2014/09/practical-git-introduction/)
 * [Dave McClure on Pirate Metrics](http://igniteshow.com/videos/startup-metrics-pirates-aarrr)
 * [Laws of Cloud SAAS Growth](http://www.bvp.com/sites/default/files/bvps_10_laws_of_cloud_saas_winter_2010_release.pdf)
