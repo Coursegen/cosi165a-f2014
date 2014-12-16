@@ -2,6 +2,7 @@
 title: Interesting links
 ---
 ##### Links to articles that you might find useful
+* Interesting presentation about google's scaling: [Software Engineering Advice from Building Large-Scale Distributed Systems](http://static.googleusercontent.com/media/research.google.com/en/us/people/jeff/stanford-295-talk.pdf)
 * [All about email regex](http://www.regular-expressions.info/email.html)
 * [Heroku: Getting Started With Rails](https://devcenter.heroku.com/articles/getting-started-with-rails4)
 * [Classification of Cloud Services](http://bitheads.com/what-types-of-cloud-services-are-available/)

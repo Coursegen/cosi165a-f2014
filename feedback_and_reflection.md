@@ -9,3 +9,7 @@
 #### My own thoughts
 * At the very beginning maybe spend a little more time explaining why this is "IT" entrepreneurship even though it seems like mostly general content about entrepreneurship
 * Add more weight to creating a landing page and getting feedback from people beyond your own network. How to drive traffic and so on.
+
+* Add a lecture about doing good presentations? Or add more live practice presentations? Or discover a workshop for presentations
+* Instead of a handout, have students develop a one page google site to describe their project for eternity.
+
